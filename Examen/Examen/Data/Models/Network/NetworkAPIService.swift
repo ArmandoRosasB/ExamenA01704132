@@ -14,7 +14,7 @@ class NetWorkAPIService {
     
     func getCases(url: URL)async -> [Cases]? {
         let parameters : Parameters = [ // El pais del cual queremos obtener informacion
-            "country" :  "canada"
+            "country" :  "mexico"
         ]
         let headers: HTTPHeaders = [ // Api Key
                 "X-Api-Key": "wLVPN1zV08lJYF7uXqgyPw==zVwp6TlVcAO1NLUf"
