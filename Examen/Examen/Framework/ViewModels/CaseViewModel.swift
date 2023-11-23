@@ -7,8 +7,14 @@
 
 import Foundation
 
+struct Contagios : Hashable{
+    var fecha : String
+    var contagios : Int
+}
+
 class CaseViewModel : ObservableObject { // Patron de diseño observer
     @Published var case_list = [Cases]() // Notificar cambios al ContentView
+    @Published var daily_cases =  [Contagios]()
     
     var case_list_requirement: CaseListRequirementProtocol
  
@@ -20,13 +26,17 @@ class CaseViewModel : ObservableObject { // Patron de diseño observer
     func get_case_list() async {
         
         let result = await case_list_requirement.get_case_list()
-        print(result!.count)
         for i in 0...result!.count - 1 {
-            print(result![i])
-         /*   let temp_movie = Movie(id: Int(result!.results[i].id), original_title: result!.results[i].original_title, overview: result!.results[i].overview, poster_path: result!.results[i].poster_path, vote_average: result!.results[i].vote_average)
+
+            let temp_case = Cases(country: result![i].country, region: result![i].region, cases: result![i].cases)
             
-           self.movie_list.append(temp_movie)*/
+            for(key, value) in result![i].cases {
+                daily_cases.append(.init(fecha: key, contagios: value.total))
+            }
+            
+            self.case_list.append(temp_case)
         }
+        
         
     }
 }
