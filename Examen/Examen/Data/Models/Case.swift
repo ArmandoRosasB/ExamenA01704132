@@ -7,9 +7,13 @@
 
 import Foundation
 
-struct Cases : Codable {
+struct Cases : Codable, Hashable {
     var country : String
     var region : String
-    var cases : [String: [String : Int]]
+    var cases : [String: Contagio]
 }
 
+struct Contagio : Codable, Hashable {
+    var new : Int
+    var total : Int
+}

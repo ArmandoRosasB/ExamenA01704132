@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 struct ContentView: View {
     @StateObject var content_view_model = CaseViewModel()
@@ -18,9 +19,21 @@ struct ContentView: View {
                 Spacer()
             } else {
                 ScrollView {
-                   /* ForEach(content_view_model.case_list){cases in
-                        ContentViewCard(cases : cases)
-                    }*/
+                    ForEach(content_view_model.case_list, id:\.self){cases in
+                        Text("\(cases.country)").font(.title).bold()
+                        if cases.region == "" {
+                            Text("Sin region especifica").font(.title3).bold()
+                        } else {
+                            Text("\(cases.region)").font(.title3).bold()
+                        }
+                        
+                        
+                        Chart(content_view_model.daily_cases, id:\.self) { daily in
+                            BarMark(x : .value("Fecha", daily.fecha),
+                                    y : .value("Contagios", daily.contagios))
+                        }
+                        
+                    }
                     }
                 }
             } .onAppear{
