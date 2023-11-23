@@ -18,7 +18,7 @@
 		472C0C952B0EF02900B81918 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 472C0C942B0EF02900B81918 /* SDWebImageSwiftUI */; };
 		472C0C9F2B0EF31E00B81918 /* CaseListRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472C0C9E2B0EF31E00B81918 /* CaseListRequirement.swift */; };
 		472C0CA12B0EF34900B81918 /* CasesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472C0CA02B0EF34900B81918 /* CasesRepository.swift */; };
-		472C0CA32B0EF35E00B81918 /* Case.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472C0CA22B0EF35E00B81918 /* Case.swift */; };
+		472C0CA32B0EF35E00B81918 /* Cases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472C0CA22B0EF35E00B81918 /* Cases.swift */; };
 		472C0CA52B0EF39500B81918 /* NetworkAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472C0CA42B0EF39500B81918 /* NetworkAPIService.swift */; };
 		472C0CA72B0EF3BC00B81918 /* CaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472C0CA62B0EF3BC00B81918 /* CaseViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -53,7 +53,7 @@
 		472C0C832B0EEF3F00B81918 /* PreUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		472C0C9E2B0EF31E00B81918 /* CaseListRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseListRequirement.swift; sourceTree = "<group>"; };
 		472C0CA02B0EF34900B81918 /* CasesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesRepository.swift; sourceTree = "<group>"; };
-		472C0CA22B0EF35E00B81918 /* Case.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case.swift; sourceTree = "<group>"; };
+		472C0CA22B0EF35E00B81918 /* Cases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cases.swift; sourceTree = "<group>"; };
 		472C0CA42B0EF39500B81918 /* NetworkAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIService.swift; sourceTree = "<group>"; };
 		472C0CA62B0EF3BC00B81918 /* CaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				472C0C9D2B0EF1E900B81918 /* Network */,
-				472C0CA22B0EF35E00B81918 /* Case.swift */,
+				472C0CA22B0EF35E00B81918 /* Cases.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -343,7 +343,7 @@
 				472C0CA72B0EF3BC00B81918 /* CaseViewModel.swift in Sources */,
 				472C0CA12B0EF34900B81918 /* CasesRepository.swift in Sources */,
 				472C0C692B0EEF3B00B81918 /* ContentView.swift in Sources */,
-				472C0CA32B0EF35E00B81918 /* Case.swift in Sources */,
+				472C0CA32B0EF35E00B81918 /* Cases.swift in Sources */,
 				472C0CA52B0EF39500B81918 /* NetworkAPIService.swift in Sources */,
 				472C0C9F2B0EF31E00B81918 /* CaseListRequirement.swift in Sources */,
 				472C0C672B0EEF3B00B81918 /* ExamenApp.swift in Sources */,
