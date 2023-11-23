@@ -15,7 +15,7 @@ struct ContentView: View {
         VStack {
             if content_view_model.case_list.isEmpty {
                 Spacer()
-                Text("Cargando")
+                Text("Cargando...")
                 Spacer()
             } else {
                 ScrollView {
@@ -32,11 +32,32 @@ struct ContentView: View {
                             BarMark(x : .value("Fecha", daily.fecha),
                                     y : .value("Contagios", daily.contagios))
                         }
+                        VStack{
+                            HStack {
+                                Text("Fecha de inicio: \(content_view_model.daily_cases[0].fecha)")
+                                Spacer()
+                                
+                                Text("Fecha de fin: \(content_view_model.daily_cases[content_view_model.daily_cases.count - 1].fecha)")
+                            }
+                            
+                            Spacer()
+                            
+                            HStack {
+                                Text("Cantidad minima de contagios registrados: \(content_view_model.min_val)")
+                                Spacer()
+                            }
+                            HStack {
+                                Text("Cantidad maxima de contagios registrados: \(content_view_model.max_val)")
+                                Spacer()
+                            }
+                            
+                        }
                         
-                    }
+                        }
+                
                     }
                 }
-            } .onAppear{
+            }.onAppear{
                 Task {
                     await content_view_model.get_case_list()
                 }

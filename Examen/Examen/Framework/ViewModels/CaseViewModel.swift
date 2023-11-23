@@ -15,6 +15,8 @@ struct Contagios : Hashable{
 class CaseViewModel : ObservableObject { // Patron de diseño observer
     @Published var case_list = [Cases]() // Notificar cambios al ContentView
     @Published var daily_cases =  [Contagios]()
+    @Published var max_val = 0
+    @Published var min_val = 10000000000
     
     var case_list_requirement: CaseListRequirementProtocol
  
@@ -32,8 +34,16 @@ class CaseViewModel : ObservableObject { // Patron de diseño observer
             
             for(key, value) in result![i].cases {
                 daily_cases.append(.init(fecha: key, contagios: value.total))
+                if max_val < value.total {
+                    max_val = value.total
+                }
+                
+                if min_val > value.total {
+                    min_val = value.total
+                }
+                
             }
-            
+            daily_cases = daily_cases.sorted(by: { $0.fecha < $1.fecha })
             self.case_list.append(temp_case)
         }
         
